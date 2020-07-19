@@ -1,7 +1,7 @@
 # Landing page project
 # Description 
 This is the first project in the web professional track of the FWD initiative.
-# Added freatures to the templete
+# Added features to the templete
 # A. Required
 1. Navigation : A dynamically created navigation menu is created based on the number of sections in the webpage.
 2. Scroll to Anchor : Each section name present in the navigation menu scrolls to this section loaction on click.
