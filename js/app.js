@@ -41,7 +41,10 @@ const to_top_button = document.getElementById("ToTheTop");
 
 
 // Scroll to anchor ID using scrollTO event
-
+function scrollToSection(id){
+    const section = document.getElementById(id);
+    section.scrollIntoView(true);
+}
 
 /**
  * End Main Functions
@@ -56,11 +59,11 @@ for (let index = 0;index < sections.length ;index ++){
     const headername = sections.item(index).getAttribute('data-nav');
     const nav_menu_item = document.createElement('li');
     const nav_menu_item_link = document.createElement('a');
-    nav_menu_item_link.setAttribute('href' , '#' + id);
-    nav_menu_item_link.setAttribute('id', 'nav_bar_for_' + id)
+    nav_menu_item_link.setAttribute('id', 'nav_bar_for_' + id);
     nav_menu_item_link.innerText = headername;
     nav_menu_item_link.classList.add("menu__link");
     nav_menu_item.appendChild(nav_menu_item_link);
+    nav_menu_item.addEventListener('click',function(){scrollToSection(id);},false);
     nav_menu_list.appendChild(nav_menu_item);
 }
 document.getElementById('nav_bar_for_' + currentactivesection.id).classList.toggle("your-active-class");
@@ -90,6 +93,3 @@ window.onscroll =function(){
         nav_menu_list.style.display = "none" ; 
     }, 3000);
 }
-
-
-
